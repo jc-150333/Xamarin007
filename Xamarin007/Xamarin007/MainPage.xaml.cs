@@ -92,6 +92,9 @@ namespace Xamarin007
 {
     public partial class MainPage : ContentPage
     {
+
+        private Entry entry;
+
         public MainPage()
         {
             InitializeComponent();
@@ -101,7 +104,7 @@ namespace Xamarin007
 
             //-------------------------------エントリー-------------------------------
             //文字入力
-            var entry = new Entry
+            entry = new Entry
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand
             };
@@ -209,7 +212,7 @@ namespace Xamarin007
             };
             layout.Children.Add(Insert);
             Insert.Clicked += InsertClicked;
-        }*/
+        }
 
         public void SelectClicked(object sender, EventArgs e)
         {
@@ -222,7 +225,7 @@ namespace Xamarin007
                 layout.Children.Add(new Label { Text = user.Name });
             }
             Content = layout;
-        }
+        }*/
 
         public void InsertClicked(object sender, EventArgs e)
         {
