@@ -106,7 +106,7 @@ namespace Xamarin007
             //文字入力
             entry = new Entry
             {
-                WidthRequest = 60
+                WidthRequest = 180
             };
             layout.Children.Add(entry);
             //追加
@@ -118,6 +118,15 @@ namespace Xamarin007
             };
             layout.Children.Add(buttonAdd);
             buttonAdd.Clicked += AddClicked;
+
+            var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
+            //var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            foreach (var user in query)
+            {
+                //Userテーブルの名前列をLabelに書き出す
+                layout.Children.Add(new Label { Text = user.Name });
+            }
+            Content = layout;
 
             /*buttonAdd.Clicked += (s, a) =>
             {//追加ボタンの処理
@@ -192,12 +201,29 @@ namespace Xamarin007
 
         public void AddClicked(object sender, EventArgs e)
         {
+            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+
+            entry = new Entry
+            {
+                WidthRequest = 180
+            };
+            layout.Children.Add(entry);
+            //追加
+            var buttonAdd = new Button
+            {
+                WidthRequest = 60,
+                TextColor = Color.Black,
+                Text = "Add"
+            };
+            layout.Children.Add(buttonAdd);
+            buttonAdd.Clicked += AddClicked;
+
             UserModel.insertUser(entry.Text);
 
             //実験
             //Userテーブルの行データを取得
             var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
-            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            //var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
             foreach (var user in query)
             {
                 //Userテーブルの名前列をLabelに書き出す
