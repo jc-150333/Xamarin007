@@ -95,13 +95,11 @@ namespace Xamarin007
 
         private Entry entry;
 
-        var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
-
         public MainPage()
         {
             InitializeComponent();
 
-            //var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
             //var layout = new ListView { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
             //-------------------------------エントリー-------------------------------
@@ -198,7 +196,7 @@ namespace Xamarin007
             //実験
             //Userテーブルの行データを取得
             var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
-            //layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
             foreach (var user in query)
             {
                 //Userテーブルの名前列をLabelに書き出す
