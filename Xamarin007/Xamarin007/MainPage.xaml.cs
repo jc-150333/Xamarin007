@@ -112,7 +112,7 @@ namespace Xamarin007
             var buttonAdd = new Button
             {
                 WidthRequest = 60,
-                TextColor = Color.White,
+                TextColor = Color.Black,
                 Text = "Add"
             };
             layout.Children.Add(buttonAdd);
@@ -202,8 +202,9 @@ namespace Xamarin007
                 //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Name });
             }
-            /*Content = layout;
+            Content = layout;
 
+            /*
             var Insert = new Button
             {
                 WidthRequest = 60,
