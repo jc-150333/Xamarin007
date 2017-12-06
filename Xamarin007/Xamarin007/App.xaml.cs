@@ -9,16 +9,22 @@ namespace Xamarin007
 {
     public partial class App : Application
     {
-        public App()
+        //データベースのパスを格納
+        public static string dbPath;
+
+        public App(string dbPath)
         {
+            //AppのdbPathに引数のパスを設定
+            App.dbPath = dbPath;
+
             InitializeComponent();
 
-            MainPage = new Xamarin007.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            // Handle when your app startsfg
         }
 
         protected override void OnSleep()
