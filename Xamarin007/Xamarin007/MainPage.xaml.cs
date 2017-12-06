@@ -108,6 +108,7 @@ namespace Xamarin007
             {
                 WidthRequest = 60
             };
+            layout.Children.Add(entry);
             //追加
             var buttonAdd = new Button
             {
