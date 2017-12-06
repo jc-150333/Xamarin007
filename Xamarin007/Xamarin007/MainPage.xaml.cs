@@ -123,6 +123,8 @@ namespace Xamarin007
 
         public void AddClicked(object sender, EventArgs e)
         {
+            UserModel.insertUser(entry.Text);
+
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
             entry = new Entry
@@ -139,8 +141,6 @@ namespace Xamarin007
             };
             layout.Children.Add(buttonAdd);
             buttonAdd.Clicked += AddClicked;
-
-            UserModel.insertUser(entry.Text);
 
             //実験
             //Userテーブルの行データを取得
