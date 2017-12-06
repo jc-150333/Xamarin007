@@ -95,18 +95,20 @@ namespace Xamarin007
 
         private Entry entry;
 
+        var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+
         public MainPage()
         {
             InitializeComponent();
 
-            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            //var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
             //var layout = new ListView { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
             //-------------------------------エントリー-------------------------------
             //文字入力
             entry = new Entry
             {
-                HorizontalOptions = LayoutOptions.FillAndExpand
+                WidthRequest = 60
             };
             //追加
             var buttonAdd = new Button
@@ -116,9 +118,9 @@ namespace Xamarin007
                 Text = "Add"
             };
             layout.Children.Add(buttonAdd);
-            //buttonAdd.Clicked += AddClicked(entry);
+            buttonAdd.Clicked += AddClicked;
 
-            buttonAdd.Clicked += (s, a) =>
+            /*buttonAdd.Clicked += (s, a) =>
             {//追加ボタンの処理
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
@@ -132,7 +134,7 @@ namespace Xamarin007
                         layout.Children.Add(new Label { Text = user.Name });
                     }
                 }
-            };
+            };*/
 
 
             /*-------------------------------インサートボタン-------------------------------
@@ -189,20 +191,20 @@ namespace Xamarin007
             Content = layout;
         }
 
-        /*public void AddClicked(UserModel entry)
+        public void AddClicked(object sender, EventArgs e)
         {
-            //UserModel.insertUser(entry.Text);
+            UserModel.insertUser(entry.Text);
 
             //実験
             //Userテーブルの行データを取得
             var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
-            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
+            //layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
             foreach (var user in query)
             {
                 //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Name });
             }
-            Content = layout;
+            /*Content = layout;
 
             var Insert = new Button
             {
@@ -211,7 +213,7 @@ namespace Xamarin007
                 TextColor = Color.Blue,
             };
             layout.Children.Add(Insert);
-            Insert.Clicked += InsertClicked;
+            Insert.Clicked += InsertClicked;*/
         }
 
         public void SelectClicked(object sender, EventArgs e)
@@ -225,7 +227,7 @@ namespace Xamarin007
                 layout.Children.Add(new Label { Text = user.Name });
             }
             Content = layout;
-        }*/
+        }
 
         public void InsertClicked(object sender, EventArgs e)
         {
