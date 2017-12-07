@@ -14,6 +14,9 @@ namespace Xamarin007
 
         public MainPage2()
         {
+            UserModel.insertUser("鈴木");
+            UserModel.insertUser("田中");
+            UserModel.insertUser("斎藤");
 
             var layout = new ListView
             {
