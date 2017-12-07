@@ -1,40 +1,71 @@
 ﻿using System;
-using Xamarin.Forms;
-
 using System.Collections.Generic;
-
 using System.Linq;
-using SQLite.Net;
+using System.Text;
+
+using Xamarin.Forms;
 
 namespace Xamarin007
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage2 : ContentPage
     {
 
         private Entry entry;
 
-        public MainPage()
+        public MainPage2()
         {
-            InitializeComponent();
 
-            var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
-
-            //-------------------------------エントリー-------------------------------
-            //文字入力
-            entry = new Entry
+            var layout = new ListView
             {
-                WidthRequest = 180
+                ItemsSource = UserModel.selectUser(),
+                ItemTemplate = new DataTemplate(typeof(TextCell))
             };
-            layout.Children.Add(entry);
-            //-------------------------------------追加ボタン---------------
+
+            //文字入力
+            var entry = new Entry
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            //追加
             var buttonAdd = new Button
             {
                 WidthRequest = 60,
-                TextColor = Color.Black,
+                TextColor = Color.White,
                 Text = "Add"
             };
-            layout.Children.Add(buttonAdd);
-            buttonAdd.Clicked += AddClicked;
+            /*buttonAdd.Clicked += (s, a) =>
+            {//追加ボタンの処理
+                if (!String.IsNullOrEmpty(entry.Text))
+                {
+                    UserModel.insertUser(entry.Text);
+                    //実験
+                    //Userテーブルの行データを取得
+                    var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
+
+                    foreach (var user in query)
+                    {
+                        //Userテーブルの名前列をLabelに書き出す
+                        layout.Children.Add(new Label { Text = user.Name });
+                    }
+                }
+            };
+
+            Content = new StackLayout
+            {
+                Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0),
+                Children =
+                    {
+                        new StackLayout
+                        {
+                            BackgroundColor = Color.Navy,
+                            Padding = 5,
+                            Orientation = StackOrientation.Horizontal,
+                            Children = {entry,buttonAdd}//Entryコントロールとボタンコントロールを配置
+                        },
+                        listView//その下にリストボックス
+                    }
+
+            };
             //-----------------------------selectがnullじゃなかったら----------------------
             if (UserModel.selectUser() != null)
             {
@@ -74,14 +105,13 @@ namespace Xamarin007
             //実験
             //Userテーブルの行データを取得
             var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
-            
+
             foreach (var user in query)
             {
                 //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Name });
             }
-            Content = layout;
+            Content = layout;*/
         }
     }
 }
-
