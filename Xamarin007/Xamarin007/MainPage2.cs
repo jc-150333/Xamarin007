@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
@@ -18,10 +19,13 @@ namespace Xamarin007
             UserModel.insertUser("田中");
             UserModel.insertUser("斎藤");
 
-            var layout = new ListView
+            var ar = new ObservableCollection<UserModel>();
+
+            var listView = new ListView
             {
-                ItemsSource = UserModel.selectUser(),
-                ItemTemplate = new DataTemplate(typeof(TextCell))
+                //ItemsSource = UserModel.selectUser(),
+                //ItemTemplate = new DataTemplate(typeof(TextCell))
+                ItemsSource = ar
             };
 
             //文字入力
@@ -33,10 +37,10 @@ namespace Xamarin007
             var buttonAdd = new Button
             {
                 WidthRequest = 60,
-                TextColor = Color.White,
+                TextColor = Color.Black,
                 Text = "Add"
             };
-            /*buttonAdd.Clicked += (s, a) =>
+            buttonAdd.Clicked += (s, a) =>
             {//追加ボタンの処理
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
@@ -48,7 +52,8 @@ namespace Xamarin007
                     foreach (var user in query)
                     {
                         //Userテーブルの名前列をLabelに書き出す
-                        layout.Children.Add(new Label { Text = user.Name });
+                        //layout.Children.Add(new Label { Text = user.Name });
+                        ar.Add(new UserModel { Name = entry.Text });
                     }
                 }
             };
@@ -114,7 +119,7 @@ namespace Xamarin007
                 //Userテーブルの名前列をLabelに書き出す
                 layout.Children.Add(new Label { Text = user.Name });
             }
-            Content = layout;*/
+            Content = layout;
         }
     }
 }
