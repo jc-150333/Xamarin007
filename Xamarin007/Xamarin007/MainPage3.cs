@@ -72,6 +72,26 @@ namespace Xamarin007
                     listView.ScrollTo(ar[index], ScrollToPosition.End, true);
                 })
             };
+
+            Content = new StackLayout
+            {
+                Padding = new Thickness(0, Device.OnPlatform(20, 0, 0,), 0, 0),
+                Children =
+                {
+                    new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        Children =
+                        {
+                            buttonStart,
+                            buttonEnd,
+                            buttonCenter,
+                            buttonMakeVisible
+                        }
+                    },
+                    listView
+                }
+            };
         }
     }
 }
