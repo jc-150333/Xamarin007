@@ -15,10 +15,34 @@ namespace Xamarin007
             public String Name { get; set; }
             public String Phone { get; set; }
         }
+
+        private Entry entry;
+        int index = 0;
+
         //s
         public MainPage3()
         {
             var ar = new ObservableCollection<String>();
+
+            var entry = new Entry
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand
+            };
+            //追加
+            var buttonAdd = new Button
+            {
+                WidthRequest = 60,
+                TextColor = Color.Black,
+                Text = "Add"
+            };
+            buttonAdd.Clicked += (s, a) =>
+            {//追加ボタンの処理
+                if (!String.IsNullOrEmpty(entry.Text))
+                {
+                    index = int.Parse(entry.Text);
+                    ar[index] += " target";
+                }
+            };
 
             foreach (var i in Enumerable.Range(0, 100))
             {
@@ -30,8 +54,8 @@ namespace Xamarin007
                 ItemsSource = ar,
             };
 
-            const int index = 20;
-            ar[index] += " target";
+            //const int index = 20;
+            //ar[index] += " target";
 
             var buttonStart = new Button
             {
@@ -59,17 +83,17 @@ namespace Xamarin007
                 Text = "Center",
                 Command = new Command(() =>
                 {
-                    listView.ScrollTo(ar[index], ScrollToPosition.End, true);
+                    listView.ScrollTo(ar[index], ScrollToPosition.Center, true);
                 })
             };
 
             var buttonMakeVisible = new Button
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
-                Text = "Center",
+                Text = "MakeVisible",
                 Command = new Command(() =>
                 {
-                    listView.ScrollTo(ar[index], ScrollToPosition.End, true);
+                    listView.ScrollTo(ar[index], ScrollToPosition.MakeVisible, true);
                 })
             };
 
