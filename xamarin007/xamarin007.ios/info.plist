@@ -49,6 +49,6 @@
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 	<key>MinimumOSVersion</key>
-	<string>10.0</string>
+	<string>10.3</string>
 </dict>
 </plist>

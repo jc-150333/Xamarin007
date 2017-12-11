@@ -19,8 +19,8 @@ namespace Xamarin007
         public MainPage3()
         {
             var ar = new ObservableCollection<String>();
-            
-            foreach(var i in Enumerable.Range(0, 100))
+
+            foreach (var i in Enumerable.Range(0, 100))
             {
                 ar.Add(string.Format("item-{0}", i));
             }
@@ -37,7 +37,8 @@ namespace Xamarin007
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Text = "Start",
-                Command = new Command(() => {
+                Command = new Command(() =>
+                {
                     listView.ScrollTo(ar[index], ScrollToPosition.Start, true);
                 })
             };
@@ -46,7 +47,8 @@ namespace Xamarin007
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Text = "End",
-                Command = new Command(() => {
+                Command = new Command(() =>
+                {
                     listView.ScrollTo(ar[index], ScrollToPosition.End, true);
                 })
             };
@@ -55,14 +57,21 @@ namespace Xamarin007
             {
                 HorizontalOptions = LayoutOptions.FillAndExpand,
                 Text = "Center",
-                Command = new Command(() => {
+                Command = new Command(() =>
+                {
                     listView.ScrollTo(ar[index], ScrollToPosition.End, true);
                 })
             };
 
-            Content = StackLayout {
-        Padding = new Thickness(0,Device.OnPlatform(20,0,0),0,0),
-        Children = {listView}
-        };
+            var buttonMakeVisible = new Button
+            {
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                Text = "Center",
+                Command = new Command(() =>
+                {
+                    listView.ScrollTo(ar[index], ScrollToPosition.End, true);
+                })
+            };
+        }
     }
 }
