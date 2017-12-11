@@ -15,7 +15,7 @@ namespace Xamarin007
             public String Name { get; set; }
             public String Phone { get; set; }
         }
-
+        //s
         public MainPage3()
         {
             var ar = new ObservableCollection<String>();
