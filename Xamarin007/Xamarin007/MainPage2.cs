@@ -53,7 +53,7 @@ namespace Xamarin007
                     {
                         //Userテーブルの名前列をLabelに書き出す
                         //layout.Children.Add(new Label { Text = user.Name });
-                        ar.Add(new UserModel { Name = entry.Text });
+                        ar.Add(new UserModel { Name = "aaaa" });
                     }
                 }
             };
