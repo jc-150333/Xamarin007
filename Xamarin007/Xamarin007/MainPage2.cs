@@ -74,7 +74,7 @@ namespace Xamarin007
                     }
 
             };
-            //-----------------------------selectがnullじゃなかったら----------------------
+            /*-----------------------------selectがnullじゃなかったら----------------------
             if (UserModel.selectUser() != null)
             {
                 var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
@@ -85,7 +85,7 @@ namespace Xamarin007
                     layout.Children.Add(new Label { Text = user.Name });
                 }
             }
-            Content = layout;
+            Content = layout;*/
         }
 
         //---------------------------Addボタン押したとき-----------------------------------
