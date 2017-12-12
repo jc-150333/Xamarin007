@@ -58,7 +58,7 @@ namespace Xamarin007
                 }
             };
 
-            Content = new StackLayout
+        Content = new StackLayout
             {
                 Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0),
                 Children =
@@ -87,6 +87,8 @@ namespace Xamarin007
             }
             Content = layout;*/
         }
+
+        
 
         /*---------------------------Addボタン押したとき-----------------------------------
         public void AddClicked(object sender, EventArgs e)

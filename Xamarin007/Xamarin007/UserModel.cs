@@ -104,6 +104,11 @@ namespace Xamarin007
             }
         }
 
+        public override string ToString()
+        {
+            return Name;
+        }
+
 
 
         /*******************サーチメソッド*************************************
