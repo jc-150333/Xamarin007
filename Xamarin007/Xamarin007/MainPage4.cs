@@ -15,11 +15,13 @@ namespace Xamarin007
 
         private ObservableCollection<UserModel> ar = new ObservableCollection<UserModel>();
 
+        int id = 1;
+
         public MainPage4()
         {
             //var ar = new ObservableCollection<UserModel>();
 
-            int id = 1;
+            
 
             var listView = new ListView
             {
@@ -48,7 +50,7 @@ namespace Xamarin007
                     UserModel.insertUser(id,entry.Text);
 
                     //Userテーブルの名前列をLabelに書き出す
-                    ar.Add(new UserModel { Id = id, Name = entry.Text });
+                    ar.Add(new UserModel { Name = entry.Text });
 
                     id++;
 
@@ -73,17 +75,17 @@ namespace Xamarin007
 
             };
         }
+
         public async void Action(MenuItem item)
         {
             var text = item.CommandParameter;
             if (item.Text == "Delete")
             {
                 ar.RemoveAt(ar.IndexOf(text));
+                UserModel.deleteUser(id);
             }
         }
     }
-
-   
 
     class MyCell : ViewCell
     {
