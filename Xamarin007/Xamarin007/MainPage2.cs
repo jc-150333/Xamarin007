@@ -88,7 +88,7 @@ namespace Xamarin007
             Content = layout;*/
         }
 
-        //---------------------------Addボタン押したとき-----------------------------------
+        /*---------------------------Addボタン押したとき-----------------------------------
         public void AddClicked(object sender, EventArgs e)
         {
             UserModel.insertUser(entry.Text);
@@ -120,6 +120,6 @@ namespace Xamarin007
                 layout.Children.Add(new Label { Text = user.Name });
             }
             Content = layout;
-        }
+        }*/
     }
 }
