@@ -13,7 +13,7 @@ namespace Xamarin007
     {
         private Entry entry;
 
-        private ObservableCollection<UserModel> ar = new ObservableCollection<UserModel>();
+        private ObservableCollection<UserModel> ar;
 
         int id = 1;
 
