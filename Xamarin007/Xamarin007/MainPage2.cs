@@ -48,17 +48,19 @@ namespace Xamarin007
 
                     //Userテーブルの名前列をLabelに書き出す
                     ar.Add(new UserModel { Name = entry.Text });
+
+                    entry.Text = "";
                 }
             };
 
-        Content = new StackLayout
+            Content = new StackLayout
             {
                 Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0),
                 Children =
                     {
                         new StackLayout
                         {
-                            BackgroundColor = Color.Navy,
+                            BackgroundColor = Color.HotPink,
                             Padding = 5,
                             Orientation = StackOrientation.Horizontal,
                             Children = {entry,buttonAdd}//Entryコントロールとボタンコントロールを配置
