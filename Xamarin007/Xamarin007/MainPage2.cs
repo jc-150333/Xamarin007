@@ -49,12 +49,12 @@ namespace Xamarin007
                     //Userテーブルの行データを取得
                     var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
 
-                    foreach (var user in query)
-                    {
+                    //foreach (var user in query)
+                    //{
                         //Userテーブルの名前列をLabelに書き出す
                         //layout.Children.Add(new Label { Text = user.Name });
-                        ar.Add(new UserModel { Name = "aaaa" });
-                    }
+                        ar.Add(new UserModel { Name = entry.Text });
+                   // }
                 }
             };
 
