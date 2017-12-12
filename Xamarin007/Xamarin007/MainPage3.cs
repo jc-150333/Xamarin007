@@ -107,6 +107,15 @@ namespace Xamarin007
                         Orientation = StackOrientation.Horizontal,
                         Children =
                         {
+                            entry,
+                            buttonAdd
+                        }
+                    },
+                    new StackLayout
+                    {
+                        Orientation = StackOrientation.Horizontal,
+                        Children =
+                        {
                             buttonStart,
                             buttonEnd,
                             buttonCenter,
