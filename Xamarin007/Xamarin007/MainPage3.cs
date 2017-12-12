@@ -40,6 +40,10 @@ namespace Xamarin007
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
                     index = int.Parse(entry.Text);
+                    foreach (var i in Enumerable.Range(0, 100))
+                    {
+                        ar.Add(string.Format("item-{0}", i));
+                    }
                     ar[index] += " target";
                 }
             };
