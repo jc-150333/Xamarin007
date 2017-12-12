@@ -25,7 +25,7 @@ namespace Xamarin007
             {
                 //ItemsSource = UserModel.selectUser(),
                 //ItemTemplate = new DataTemplate(typeof(TextCell))
-                ItemsSource = ar
+                ItemsSource = ar,
             };
 
             //文字入力
@@ -45,16 +45,9 @@ namespace Xamarin007
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
                     UserModel.insertUser(entry.Text);
-                    //実験
-                    //Userテーブルの行データを取得
-                    var query = UserModel.selectUser(); //中身はSELECT * FROM [User]
 
-                    //foreach (var user in query)
-                    //{
-                        //Userテーブルの名前列をLabelに書き出す
-                        //layout.Children.Add(new Label { Text = user.Name });
-                        ar.Add(new UserModel { Name = entry.Text });
-                   // }
+                    //Userテーブルの名前列をLabelに書き出す
+                    ar.Add(new UserModel { Name = entry.Text });
                 }
             };
 
