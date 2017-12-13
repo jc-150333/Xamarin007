@@ -13,7 +13,9 @@ namespace Xamarin007
     {
         private Entry entry;
 
-        private ObservableCollection<UserModel> ar;
+        //private ObservableCollection<UserModel> ar;
+
+        private ObservableCollection<UserModel> ar = new ObservableCollection<UserModel>(UserModel.selectUser());
 
         int id = 1;
 
