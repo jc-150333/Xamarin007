@@ -57,6 +57,15 @@ namespace Xamarin007
 
                     id++;
 
+                    listView = new ListView
+                    {
+                        //ItemsSource = UserModel.selectUser(),
+                        //ItemTemplate = new DataTemplate(typeof(TextCell))
+                        ItemsSource = ar,
+                        ItemTemplate = new DataTemplate(() => new MyCell(this)),
+
+                    };
+
                     Application.Current.MainPage = new MainPage4();
 
                     //entry.Text = "";
