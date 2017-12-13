@@ -15,13 +15,13 @@ namespace Xamarin007
 
         //private ObservableCollection<UserModel> ar;
 
-        private ObservableCollection<UserModel> ar = new ObservableCollection<UserModel>(UserModel.selectUser());
+        public ObservableCollection<UserModel> ar = new ObservableCollection<UserModel>(UserModel.selectUser());
 
         int id = 1;
 
         public MainPage4()
         {
-            var ar = new ObservableCollection<UserModel>();
+            //var ar = new ObservableCollection<UserModel>();
 
             var listView = new ListView
             {
