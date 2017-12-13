@@ -56,7 +56,7 @@ namespace Xamarin007
 
                     id++;
 
-                    entry.Text = "";
+                    //entry.Text = "";
                 }
             };
 
@@ -84,7 +84,7 @@ namespace Xamarin007
             if (item.Text == "Delete")
             {
                 ar.RemoveAt(ar.IndexOf(text));
-                UserModel.deleteUser(id);
+                //UserModel.deleteUser(id);
             }
         }
     }
