@@ -14,15 +14,18 @@ namespace Xamarin007
         private Entry entry;
 
         //private ObservableCollection<UserModel> ar;
-
-        private ObservableCollection<UserModel> ar = new ObservableCollection<UserModel>(UserModel.selectUser());
+        private ObservableCollection<UserModel> ar;
 
         int id = 1;
 
         public MainPage4()
         {
-            //var ar = new ObservableCollection<UserModel>();
+            UserModel.insertUser("鈴木");
 
+            if (UserModel.selectUser() != null)
+            {
+                ar = new ObservableCollection<UserModel>(UserModel.selectUser());
+            }
             var listView = new ListView
             {
                 //ItemsSource = UserModel.selectUser(),
