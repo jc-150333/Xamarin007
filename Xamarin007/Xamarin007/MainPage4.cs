@@ -15,7 +15,7 @@ namespace Xamarin007
 
         //private ObservableCollection<UserModel> ar;
 
-        public ObservableCollection<UserModel> ar = new ObservableCollection<UserModel>(UserModel.selectUser());
+        private ObservableCollection<UserModel> ar = new ObservableCollection<UserModel>(UserModel.selectUser());
 
         int id = 1;
 
@@ -77,7 +77,7 @@ namespace Xamarin007
             };
         }
 
-        public async void Action(MenuItem item)
+        public void Action(MenuItem item)
         {
             var text = item.CommandParameter;
             if (item.Text == "Delete")
