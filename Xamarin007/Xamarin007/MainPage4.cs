@@ -21,9 +21,7 @@ namespace Xamarin007
 
         public MainPage4()
         {
-            //var ar = new ObservableCollection<UserModel>();
-
-            
+            var ar = new ObservableCollection<UserModel>();
 
             var listView = new ListView
             {
@@ -31,6 +29,7 @@ namespace Xamarin007
                 //ItemTemplate = new DataTemplate(typeof(TextCell))
                 ItemsSource = ar,
                 //ItemTemplate = new DataTemplate(() => new MyCell(this)),
+
             };
 
             //文字入力
