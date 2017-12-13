@@ -49,7 +49,7 @@ namespace Xamarin007
             {//追加ボタンの処理
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
-                    UserModel.insertUser(id,entry.Text);
+                    UserModel.insertUser(entry.Text);
 
                     //Userテーブルの名前列をLabelに書き出す
                     ar.Add(new UserModel { Name = entry.Text });
