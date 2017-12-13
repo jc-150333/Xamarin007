@@ -31,7 +31,7 @@ namespace Xamarin007
                 //ItemsSource = UserModel.selectUser(),
                 //ItemTemplate = new DataTemplate(typeof(TextCell))
                 ItemsSource = ar,
-                //ItemTemplate = new DataTemplate(() => new MyCell(this)),
+                ItemTemplate = new DataTemplate(() => new MyCell(this)),
 
             };
 
