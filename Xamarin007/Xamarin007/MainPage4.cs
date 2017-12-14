@@ -57,8 +57,6 @@ namespace Xamarin007
 
                     ar.Add(new UserModel { Name = entry.Text });
 
-                    listView.Focus();
-
                     id++;
 
                     Application.Current.MainPage = new MainPage4();
@@ -87,10 +85,10 @@ namespace Xamarin007
 
         public void Action(MenuItem item)
         {
-            var text = item.CommandParameter;
-            if (item.Text == "Delete")
+            //var text = item.CommandParameter;
+            //if (item.Text == "Delete")
             {
-                ar.RemoveAt(ar.IndexOf(text));
+                //ar.RemoveAt(ar.IndexOf(text));
                 //UserModel.deleteUser(id);
             }
         }
@@ -120,7 +118,7 @@ namespace Xamarin007
             View = new StackLayout
             {
                 Padding = 5,
-                //Children = { label }
+                Children = { label }
             };
         }
     }
