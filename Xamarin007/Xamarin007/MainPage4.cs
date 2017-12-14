@@ -98,10 +98,10 @@ namespace Xamarin007
     {
         public MyCell(MainPage4 myPage)
         {
-            var label = new Label
-            {
-                VerticalOptions = LayoutOptions.CenterAndExpand,
-            };
+            //var label = new Label
+            //{
+            //    VerticalOptions = LayoutOptions.CenterAndExpand,
+            //};
             //label.SetBinding(Label.TextProperty, new Binding("."));
 
             var actionDelete = new MenuItem
@@ -118,7 +118,7 @@ namespace Xamarin007
             View = new StackLayout
             {
                 Padding = 10,
-                Children = { label }
+                //Children = { label }
             };
         }
     }
