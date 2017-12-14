@@ -111,13 +111,13 @@ namespace Xamarin007
                 IsDestructive = true,
             };
 
-            actionDelete.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+            //actionDelete.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
             actionDelete.Clicked += (s, a) => myPage.Action((MenuItem)s);
             ContextActions.Add(actionDelete);
 
             View = new StackLayout
             {
-                Padding = 10,
+                Padding = 5,
                 //Children = { label }
             };
         }
