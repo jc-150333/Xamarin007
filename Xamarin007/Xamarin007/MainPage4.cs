@@ -13,6 +13,8 @@ namespace Xamarin007
     {
         private Entry entry;
 
+        static readonly object Locker = new object();
+
         //private ObservableCollection<UserModel> ar;
         private ObservableCollection<UserModel> ar;
 
@@ -57,15 +59,6 @@ namespace Xamarin007
 
                     id++;
 
-                    listView = new ListView
-                    {
-                        //ItemsSource = UserModel.selectUser(),
-                        //ItemTemplate = new DataTemplate(typeof(TextCell))
-                        ItemsSource = ar,
-                        ItemTemplate = new DataTemplate(() => new MyCell(this)),
-
-                    };
-
                     Application.Current.MainPage = new MainPage4();
 
                     //entry.Text = "";
@@ -109,7 +102,7 @@ namespace Xamarin007
             {
                 VerticalOptions = LayoutOptions.CenterAndExpand,
             };
-            label.SetBinding(Label.TextProperty, new Binding("."));
+            //label.SetBinding(Label.TextProperty, new Binding("."));
 
             var actionDelete = new MenuItem
             {
