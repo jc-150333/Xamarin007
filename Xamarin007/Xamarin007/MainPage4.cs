@@ -57,6 +57,8 @@ namespace Xamarin007
 
                     ar.Add(new UserModel { Name = entry.Text });
 
+                    listView.Focus();
+
                     id++;
 
                     Application.Current.MainPage = new MainPage4();
@@ -98,11 +100,11 @@ namespace Xamarin007
     {
         public MyCell(MainPage4 myPage)
         {
-            //var label = new Label
-            //{
-            //    VerticalOptions = LayoutOptions.CenterAndExpand,
-            //};
-            //label.SetBinding(Label.TextProperty, new Binding("."));
+            var label = new Label
+            {
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+            };
+            label.SetBinding(Label.TextProperty, new Binding("."));
 
             var actionDelete = new MenuItem
             {
@@ -111,7 +113,7 @@ namespace Xamarin007
                 IsDestructive = true,
             };
 
-            //actionDelete.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
+            actionDelete.SetBinding(MenuItem.CommandParameterProperty, new Binding("."));
             actionDelete.Clicked += (s, a) => myPage.Action((MenuItem)s);
             ContextActions.Add(actionDelete);
 
