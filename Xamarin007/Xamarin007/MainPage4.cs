@@ -16,7 +16,7 @@ namespace Xamarin007
         static readonly object Locker = new object();
 
         //private ObservableCollection<string> ar;
-        private ObservableCollection<UserModel> ar;
+        public ObservableCollection<UserModel> ar;
 
         int id = 1;
 
@@ -51,7 +51,7 @@ namespace Xamarin007
             {//追加ボタンの処理
                 if (!String.IsNullOrEmpty(entry.Text))
                 {
-                    UserModel.insertUser(entry.Text);
+                    UserModel.insertUser(id,entry.Text);
 
                     ar.Add(new UserModel { Name = entry.Text });
 
@@ -59,7 +59,7 @@ namespace Xamarin007
 
                     Application.Current.MainPage = new MainPage4();
 
-                    //entry.Text = "";
+                    entry.Text = "";
                 }
             };
 
