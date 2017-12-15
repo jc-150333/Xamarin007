@@ -15,7 +15,7 @@ namespace Xamarin007
 
         static readonly object Locker = new object();
 
-        //private ObservableCollection<UserModel> ar;
+        //private ObservableCollection<string> ar;
         private ObservableCollection<UserModel> ar;
 
         int id = 1;
@@ -33,7 +33,7 @@ namespace Xamarin007
                 //ItemsSource = UserModel.selectUser(),
                 //ItemTemplate = new DataTemplate(typeof(TextCell))
                 ItemsSource = ar,
-                ItemTemplate = new DataTemplate(() => new MyCell(this)),
+                //ItemTemplate = new DataTemplate(() => new MyCell(this)),
 
             };
 
@@ -65,6 +65,16 @@ namespace Xamarin007
                 }
             };
 
+            listView.ItemTapped += async (s, a) =>
+            {//リストタップジ
+                var item = (UserModel)a.Item;
+
+                if (await DisplayAlert("削除してよろしいですか", item.ToString(), "OK", "キャンセル"))
+                {
+                    ar.RemoveAt(ar.IndexOf(item));
+                }
+            };
+
             Content = new StackLayout
             {
                 Padding = new Thickness(0, Device.OnPlatform(20, 0, 0), 0, 0),
@@ -83,17 +93,21 @@ namespace Xamarin007
             };
         }
 
+
+        /*
         public void Action(MenuItem item)
         {
-            //var text = item.CommandParameter;
-            //if (item.Text == "Delete")
+            var text = item.CommandParameter;
+            if (item.Text == "Delete")
             {
-                //ar.RemoveAt(ar.IndexOf(text));
+                ar.RemoveAt(ar.IndexOf(text));
                 //UserModel.deleteUser(id);
             }
         }
+        */
     }
 
+    /*
     class MyCell : ViewCell
     {
         public MyCell(MainPage4 myPage)
@@ -122,4 +136,5 @@ namespace Xamarin007
             };
         }
     }
+    */
 }
