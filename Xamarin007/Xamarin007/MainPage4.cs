@@ -72,6 +72,7 @@ namespace Xamarin007
                 if (await DisplayAlert("削除してよろしいですか", item.ToString(), "OK", "キャンセル"))
                 {
                     ar.RemoveAt(ar.IndexOf(item));
+                    UserModel.deleteUser(item.Id);
                 }
             };
 
