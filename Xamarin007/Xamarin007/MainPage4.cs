@@ -22,8 +22,6 @@ namespace Xamarin007
 
         public MainPage4()
         {
-            UserModel.insertUser("鈴木");
-
             if (UserModel.selectUser() != null)
             {
                 ar = new ObservableCollection<UserModel>(UserModel.selectUser());
