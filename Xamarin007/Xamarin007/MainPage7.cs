@@ -6,11 +6,11 @@ using SQLite.Net;
 
 namespace Xamarin007
 {
-    public partial class MainPage6 : ContentPage
+    public class MainPage7 : ContentPage
     {
-        private Entry entry,entry2,entry3;
+        private Entry entry, entry2, entry3;
 
-        public MainPage6()
+        public MainPage7()
         {
 
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
