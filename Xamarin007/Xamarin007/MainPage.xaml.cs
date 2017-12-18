@@ -10,7 +10,6 @@ namespace Xamarin007
 {
     public partial class MainPage : ContentPage
     {
-
         private Entry entry;
 
         public MainPage()

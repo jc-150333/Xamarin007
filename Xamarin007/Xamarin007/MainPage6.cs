@@ -1,8 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
-
 using System.Collections.Generic;
-
 using System.Linq;
 using SQLite.Net;
 
@@ -10,14 +8,12 @@ namespace Xamarin007
 {
     public partial class MainPage6 : ContentPage
     {
-        
-
         private Entry entry,entry2,entry3;
 
         public MainPage6()
         {
-            InitializeComponent();
-
+            //InitializeComponent();
+            
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
             //-------------------------------エントリー-------------------------------
