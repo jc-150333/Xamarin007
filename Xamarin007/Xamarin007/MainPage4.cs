@@ -15,8 +15,8 @@ namespace Xamarin007
 
         static readonly object Locker = new object();
 
-        //private ObservableCollection<string> ar;
-        public ObservableCollection<UserModel> ar;
+        private ObservableCollection<UserModel> ar;
+        //public ObservableCollection<UserModel> ar;
 
         int id = 1;
 
