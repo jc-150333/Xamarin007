@@ -10,14 +10,14 @@ namespace Xamarin007
 {
     public partial class MainPage6 : ContentPage
     {
-        InitializeComponent();
+        
 
         private Entry entry,entry2,entry3;
 
         public MainPage6()
         {
+            InitializeComponent();
 
-            
             var layout = new StackLayout { HorizontalOptions = LayoutOptions.Center, Margin = new Thickness { Top = 100 } };
 
             //-------------------------------エントリー-------------------------------
