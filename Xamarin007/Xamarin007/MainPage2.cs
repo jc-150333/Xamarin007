@@ -15,7 +15,7 @@ namespace Xamarin007
 
         public MainPage2()
         {
-            //UserModel.insertUser("鈴木");
+            //UserModel.insertUser("鈴木");q
             //UserModel.insertUser("田中");
             //UserModel.insertUser("斎藤");
 
