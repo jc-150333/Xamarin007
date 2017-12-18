@@ -45,6 +45,7 @@
     <Compile Include="MainPage3.cs" />
     <Compile Include="MainPage4.cs" />
     <Compile Include="MainPage5.cs" />
+    <Compile Include="MainPage6.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserModel.cs" />
   </ItemGroup>

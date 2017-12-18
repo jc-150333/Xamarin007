@@ -82,6 +82,27 @@ namespace Xamarin007
             }
         }
 
+        /*******************アップデートメソッド**************************************/
+        public static List<UserModel> UpdateUser(int id, string name)
+        {
+            using (SQLiteConnection db = new SQLiteConnection(App.dbPath))
+            {
+
+                try
+                {
+                    //データベースに指定したSQLを発行します
+                    return db.Query<UserModel>("UPDATE [User] SET [NAME]=[name] WHERE [Id]=[id]");
+
+                }
+                catch (Exception e)
+                {
+
+                    System.Diagnostics.Debug.WriteLine(e);
+                    return null;
+                }
+            }
+        }
+
 
         /*******************オーダーメソッド**************************************/
         public static List<UserModel> orderUser()
