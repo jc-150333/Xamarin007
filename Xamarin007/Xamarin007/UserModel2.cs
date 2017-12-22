@@ -16,7 +16,6 @@ namespace Xamarin007
         //id列
         public int Id { get; set; }
         //名前列
-        [ForeignKey]
         public string Name { get; set; }
 
         /****************************インサートメソッド********************/
