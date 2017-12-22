@@ -57,9 +57,23 @@ namespace Xamarin007
 
                     id++;
 
-                    Application.Current.MainPage = new MainPage4();
+                    //Application.Current.MainPage = new MainPage4();
 
                     entry.Text = "";
+                }
+            };
+
+            var buttonAllDelete = new Button
+            {
+                WidthRequest = 60,
+                TextColor = Color.Black,
+                Text = "全削除"
+            };
+            buttonAdd.Clicked += async (s, a) =>
+            {//リストタップジ
+                if (await DisplayAlert("削除してよろしいですか", "","OK", "キャンセル"))
+                {
+                    UserModel.DeleteAll();
                 }
             };
 

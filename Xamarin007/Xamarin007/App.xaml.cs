@@ -19,7 +19,7 @@ namespace Xamarin007
 
             InitializeComponent();
 
-            MainPage = new MainPage7();
+            MainPage = new MainPage4();
         }
 
         protected override void OnStart()
